@@ -1,0 +1,28 @@
+# 条件DDPM训练配置示例
+
+# 数据集路径
+data_root: "BUS-CoT/BUS-CoT"
+lesion_dataset: "BUS-CoT/BUS-CoT/DatasetFiles/lesion_dataset.json"
+bus_expert: "BUS-CoT/BUS-CoT/DatasetFiles/BUS-Expert_dataset.json"
+
+# 输出目录
+output_dir: "./outputs"
+
+# 训练参数
+batch_size: 16
+epochs: 100
+lr: 1e-4
+image_size: 256
+n_steps: 1000  # 扩散步数
+
+# 数据集划分
+train_ratio: 0.8  # 训练集比例（按患者划分）
+seed: 42
+
+# 设备
+device: "cuda"  # 或 "cpu"
+
+# 保存间隔
+save_interval: 10  # 每N个epoch保存一次检查点
+sample_interval: 5  # 每N个epoch生成一次样本
+
